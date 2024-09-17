@@ -8,7 +8,11 @@ const cors = Cors({
 })
 
 // Helper method to wait for a middleware to execute before continuing
+<<<<<<< HEAD
 function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: Function) {
+=======
+function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: () => Promise<any>) {
+>>>>>>> new-main
   return new Promise((resolve, reject) => {
     fn(req, res, (result: any) => {
       if (result instanceof Error) {
@@ -19,7 +23,11 @@ function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: Function) 
   })
 }
 
+<<<<<<< HEAD
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+=======
+export default async function handler(req: NextApiRequest, res: NextApiResponse<{ message: string }>) {
+>>>>>>> new-main
   console.log("Request received:", req.method, req.body);
   
   // Run the middleware
