@@ -11,10 +11,9 @@ export interface FormData {
 interface LearnMoreFormProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (formData: FormData) => Promise<void>;
 }
 
-export default function LearnMoreForm({ isOpen, onClose, onSubmit }: LearnMoreFormProps) {
+export default function LearnMoreForm({ isOpen, onClose }: LearnMoreFormProps) {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -68,7 +67,7 @@ export default function LearnMoreForm({ isOpen, onClose, onSubmit }: LearnMoreFo
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmitWrapper = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
@@ -115,7 +114,7 @@ export default function LearnMoreForm({ isOpen, onClose, onSubmit }: LearnMoreFo
               </button>
             </div>
             <p className="leading-relaxed mb-5 text-gray-600 dark:text-gray-300">Please fill in the details below to get access to our AI-powered solutions.</p>
-            <form onSubmit={handleSubmitWrapper}>
+            <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name *</label>
                 <input

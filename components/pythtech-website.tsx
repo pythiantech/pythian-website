@@ -5,20 +5,12 @@ import { RadarIcon, ShieldIcon, NetworkIcon, EyeIcon, ShipIcon, BrainIcon } from
 import { Button } from "@/components/ui/button"
 import LearnMoreForm from '../app/components/LearnMoreForm';
 import Image from 'next/image'
-import { FormData as LearnMoreFormData } from '../app/components/LearnMoreForm';
 
 export function PythtechWebsite() {
   const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false);
 
   const openLearnMore = () => setIsLearnMoreOpen(true);
   const closeLearnMore = () => setIsLearnMoreOpen(false);
-
-  const handleSubmit = async (formData: LearnMoreFormData) => {
-    // Simulate sending email
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    // In a real application, you would send the form data to a server here
-    console.log("Sending email to info@pythtech.com with data:", formData);
-  };
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
@@ -271,7 +263,7 @@ export function PythtechWebsite() {
         </div>
       </footer>
 
-      <LearnMoreForm isOpen={isLearnMoreOpen} onClose={closeLearnMore} onSubmit={handleSubmit} />
+      <LearnMoreForm isOpen={isLearnMoreOpen} onClose={closeLearnMore} />
     </div>
   )
 }
