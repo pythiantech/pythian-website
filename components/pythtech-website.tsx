@@ -36,7 +36,7 @@ export function PythtechWebsite() {
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <Image
-              src="/pythtech_logo.png"
+              src="/pythtech_logo_small.png"
               alt="Pythtech Logo"
               width={200}  // Adjust this value to match your logo's width
               height={50}  // Adjust this value to match your logo's height
