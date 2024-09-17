@@ -31,17 +31,22 @@ export function PythtechWebsite() {
   const closeLearnMore = () => setIsLearnMoreOpen(false);
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="bg-white shadow-sm">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <header className="bg-white dark:bg-gray-800 shadow-sm">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Image src="/pythtech_logo.png" alt="Pythtech Logo" className="h-20 w-40" />
+            <Image
+              src="/pythtech_logo.png"
+              alt="Pythtech Logo"
+              width={200}  // Adjust this value to match your logo's width
+              height={50}  // Adjust this value to match your logo's height
+            />
           </div>
         </div>
       </header>
 
       <main>
-        <section className="bg-blue-600 text-white py-20">
+        <section className="bg-blue-600 dark:bg-blue-800 text-white py-20">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-4xl font-bold mb-4">Maritime Data Analytics Service (MDAS)</h2>
             <p className="text-xl mb-8">Revolutionizing maritime intelligence with AI-driven risk profiling</p>
@@ -61,32 +66,32 @@ export function PythtechWebsite() {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">Our Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-blue-50">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-blue-50 dark:hover:bg-blue-900">
                 <RadarIcon className="w-12 h-12 text-blue-500 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Predictive Risk Intelligence</h3>
                 <p>Enhance maritime domain awareness with AI-driven operational precision and actionable insights.</p>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-green-50">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-green-50 dark:hover:bg-green-900">
                 <ShieldIcon className="w-12 h-12 text-green-500 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Safeguard Borders & Assets</h3>
                 <p>Expose maritime threats in real-time and make smarter operational decisions to protect your borders.</p>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-purple-50">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-purple-50 dark:hover:bg-purple-900">
                 <NetworkIcon className="w-12 h-12 text-purple-500 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Defense & Intelligence</h3>
                 <p>Optimize operational decision-making and strategic planning with our advanced AI technology.</p>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-red-50">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-red-50 dark:hover:bg-red-900">
                 <EyeIcon className="w-12 h-12 text-red-500 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Comprehensive Sanctions Screening Solutions</h3>
                 <p>Ensure compliance with comprehensive sanctions screening for wet/dry bulk and containers.</p>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-yellow-50">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-yellow-50 dark:hover:bg-yellow-900">
                 <ShipIcon className="w-12 h-12 text-yellow-600 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Ocean-Freight Visibility</h3>
                 <p>Gain real-time visibility for bulk and container shipments with 99% coverage of all ocean shipments.</p>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-indigo-50">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-indigo-50 dark:hover:bg-indigo-900">
                 <BrainIcon className="w-12 h-12 text-indigo-500 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">AI-Powered APIs</h3>
                 <p>A rich suite of AI-powered APIs for Areas, Vessels, Companies & Shipments.</p>
@@ -95,7 +100,7 @@ export function PythtechWebsite() {
           </div>
         </section>
 
-        <section id="predictive-risk-insights" className="py-20 bg-gray-50">
+        <section id="predictive-risk-insights" className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
@@ -104,13 +109,19 @@ export function PythtechWebsite() {
                 <p>Our state-of-the-art technology integrates diverse data streams, including AIS (Automatic Identification System) feeds, real-time weather patterns, and satellite imagery, to create detailed and comprehensive risk profiles for vessels across the globe. By leveraging these rich data sources, we provide predictive risk recommendations that empower you to make informed decisions with unparalleled confidence.</p>
               </div>
               <div className="md:w-1/2">
-                <Image src="/predictive_risk.png?height=300&width=400" alt="Predictive Risk Insights" className="rounded-lg shadow-md" />
+                <Image 
+                  src="/predictive_risk.png" 
+                  alt="Predictive Risk Insights" 
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-md w-full h-auto" 
+                />
               </div>
             </div>
           </div>
         </section>
 
-        <section id="protect-borders-assets" className="py-20">
+        <section id="protect-borders-assets" className="py-20 dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row-reverse items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 md:pl-8">
@@ -124,13 +135,19 @@ export function PythtechWebsite() {
                 </ul>
               </div>
               <div className="md:w-1/2">
-                <Image src="/border.png?height=300&width=400" alt="Protect Borders & Assets" className="rounded-lg shadow-md" />
+                <Image 
+                  src="/border.png" 
+                  alt="Protect Borders & Assets" 
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-md w-full h-auto" 
+                />
               </div>
             </div>
           </div>
         </section>
 
-        <section id="defense-intelligence" className="py-20 bg-gray-50">
+        <section id="defense-intelligence" className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
@@ -144,13 +161,19 @@ export function PythtechWebsite() {
                 </ul>
               </div>
               <div className="md:w-1/2">
-                <Image src="/defense.png?height=300&width=400" alt="Defense & Intelligence" className="rounded-lg shadow-md" />
+                <Image 
+                  src="/defense.png" 
+                  alt="Defense & Intelligence" 
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-md w-full h-auto" 
+                />
               </div>
             </div>
           </div>
         </section>
 
-        <section id="sanctions-screening" className="py-20">
+        <section id="sanctions-screening" className="py-20 dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row-reverse items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 md:pl-8">
@@ -166,13 +189,19 @@ export function PythtechWebsite() {
                 </ul>
               </div>
               <div className="md:w-1/2">
-                <Image src="/sanctions.png?height=300&width=400" alt="Sanctions Screening" className="rounded-lg shadow-md" />
+                <Image 
+                  src="/sanctions.png" 
+                  alt="Sanctions Screening" 
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-md w-full h-auto" 
+                />
               </div>
             </div>
           </div>
         </section>
 
-        <section id="ocean-freight-visibility" className="py-20 bg-gray-50">
+        <section id="ocean-freight-visibility" className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
@@ -186,13 +215,19 @@ export function PythtechWebsite() {
               </ul>
               </div>
               <div className="md:w-1/2">
-                <Image src="/ofv.png?height=300&width=400" alt="Ocean-Freight Visibility" className="rounded-lg shadow-md" />
+                <Image 
+                  src="/ofv.png" 
+                  alt="Ocean-Freight Visibility" 
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-md w-full h-auto" 
+                />
               </div>
             </div>
           </div>
         </section>
 
-        <section id="ai-powered-analytics" className="py-20">
+        <section id="ai-powered-analytics" className="py-20 dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row-reverse items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 md:pl-8">
@@ -206,13 +241,19 @@ export function PythtechWebsite() {
                 </ul>
               </div>
               <div className="md:w-1/2">
-                <Image src="/api.png?height=300&width=400" alt="AI-Powered Analytics" className="rounded-lg shadow-md" />
+                <Image 
+                  src="/api.png" 
+                  alt="AI-Powered Analytics" 
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-md w-full h-auto" 
+                />
               </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-blue-600 text-white py-20">
+        <section className="bg-blue-600 dark:bg-blue-800 text-white py-20">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-8">Ready to Revolutionize Your Maritime Intelligence?</h2>
             <p className="text-xl mb-8">Contact us today to learn how Pythtech can transform your maritime operations with AI-driven insights.</p>
@@ -228,7 +269,7 @@ export function PythtechWebsite() {
         </section>
       </main>
 
-      <footer className="bg-gray-800 text-white py-8">
+      <footer className="bg-gray-800 dark:bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-2">&copy; 2023 Pythtech Pvt. Ltd. All rights reserved.</p>
           <address className="not-italic">

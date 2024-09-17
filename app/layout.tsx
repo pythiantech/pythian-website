@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from 'next-themes';
 
 const geist = localFont({
   src: [
@@ -29,14 +30,28 @@ export const metadata: Metadata = {
   description: 'Your website description here',
 };
 
+import { ReactNode } from 'react'
+
+function Providers({ children }: { children: ReactNode }) {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      {children}
+    </ThemeProvider>
+  )
+}
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
-      <body className={geist.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
