@@ -25,12 +25,6 @@ export default function LearnMoreForm({ isOpen, onClose, onInputChange, onSubmit
 
   if (!isOpen) return null;
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prevData => ({ ...prevData, [name]: value }));
-    setErrors(prevErrors => ({ ...prevErrors, [name]: '' }));
-  };
-
   const validateForm = () => {
     let isValid = true;
     const newErrors = { name: '', email: '', phone: '', query: '' };
@@ -62,18 +56,15 @@ export default function LearnMoreForm({ isOpen, onClose, onInputChange, onSubmit
     return isValid;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmitWrapper = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        // Simulate submission with a random delay between 2 and 3 seconds
-        const delay = Math.random() * 1000 + 2000; // Random delay between 2000ms and 3000ms
-        await new Promise(resolve => setTimeout(resolve, delay));
-
+        await onSubmit(e);
         setShowConfirmation(true);
       } catch (error) {
-        console.error('Simulated error:', error);
+        console.error('Error:', error);
         alert('Failed to submit the form. Please try again.');
       } finally {
         setIsSubmitting(false);
@@ -112,7 +103,7 @@ export default function LearnMoreForm({ isOpen, onClose, onInputChange, onSubmit
               </button>
             </div>
             <p className="leading-relaxed mb-5 text-gray-600">Please fill in the details below to get access to our AI-powered solutions.</p>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmitWrapper}>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
                 <input
