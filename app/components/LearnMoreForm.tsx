@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import { addFormSubmission } from '../airtable';
+
+export interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  query: string;
+}
 
 interface LearnMoreFormProps {
   isOpen: boolean;
   onClose: () => void;
   onSubmit: (formData: FormData) => Promise<void>;
-}
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  query: string;
 }
 
 export default function LearnMoreForm({ isOpen, onClose, onSubmit }: LearnMoreFormProps) {
@@ -72,7 +73,7 @@ export default function LearnMoreForm({ isOpen, onClose, onSubmit }: LearnMoreFo
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        await onSubmit(formData);
+        await addFormSubmission(formData);
         setShowConfirmation(true);
       } catch (error) {
         console.error('Error:', error);
