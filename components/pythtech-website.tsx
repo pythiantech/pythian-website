@@ -8,27 +8,16 @@ import Image from 'next/image'
 
 export function PythtechWebsite() {
   const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    reason: ""
-  })
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    // Simulate sending email
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    // In a real application, you would send the form data to a server here
-    console.log("Sending email to info@pythtech.com with data:", formData)
-  }
 
   const openLearnMore = () => setIsLearnMoreOpen(true);
   const closeLearnMore = () => setIsLearnMoreOpen(false);
+
+  const handleSubmit = async (formData: FormData) => {
+    // Simulate sending email
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    // In a real application, you would send the form data to a server here
+    console.log("Sending email to info@pythtech.com with data:", formData);
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
@@ -55,7 +44,7 @@ export function PythtechWebsite() {
               onClick={openLearnMore}
               variant="outline"
               size="lg"
-              className="bg-white text-blue-600 hover:bg-blue-50"
+              className="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900 hover:text-blue-700 dark:hover:text-blue-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
             >
               Learn More
             </Button>
@@ -66,32 +55,32 @@ export function PythtechWebsite() {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">Our Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-blue-50 dark:hover:bg-blue-900">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transition duration-300 hover:shadow-xl hover:bg-blue-50 dark:hover:bg-blue-900">
                 <RadarIcon className="w-12 h-12 text-blue-500 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Predictive Risk Intelligence</h3>
                 <p>Enhance maritime domain awareness with AI-driven operational precision and actionable insights.</p>
               </div>
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-green-50 dark:hover:bg-green-900">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transition duration-300 hover:shadow-xl hover:bg-green-50 dark:hover:bg-green-900">
                 <ShieldIcon className="w-12 h-12 text-green-500 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Safeguard Borders & Assets</h3>
                 <p>Expose maritime threats in real-time and make smarter operational decisions to protect your borders.</p>
               </div>
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-purple-50 dark:hover:bg-purple-900">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transition duration-300 hover:shadow-xl hover:bg-purple-50 dark:hover:bg-purple-900">
                 <NetworkIcon className="w-12 h-12 text-purple-500 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Defense & Intelligence</h3>
                 <p>Optimize operational decision-making and strategic planning with our advanced AI technology.</p>
               </div>
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-red-50 dark:hover:bg-red-900">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transition duration-300 hover:shadow-xl hover:bg-red-50 dark:hover:bg-red-900">
                 <EyeIcon className="w-12 h-12 text-red-500 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Comprehensive Sanctions Screening Solutions</h3>
                 <p>Ensure compliance with comprehensive sanctions screening for wet/dry bulk and containers.</p>
               </div>
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-yellow-50 dark:hover:bg-yellow-900">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transition duration-300 hover:shadow-xl hover:bg-yellow-50 dark:hover:bg-yellow-900">
                 <ShipIcon className="w-12 h-12 text-yellow-600 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Ocean-Freight Visibility</h3>
                 <p>Gain real-time visibility for bulk and container shipments with 99% coverage of all ocean shipments.</p>
               </div>
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg hover:bg-indigo-50 dark:hover:bg-indigo-900">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transition duration-300 hover:shadow-xl hover:bg-indigo-50 dark:hover:bg-indigo-900">
                 <BrainIcon className="w-12 h-12 text-indigo-500 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">AI-Powered APIs</h3>
                 <p>A rich suite of AI-powered APIs for Areas, Vessels, Companies & Shipments.</p>
@@ -114,7 +103,7 @@ export function PythtechWebsite() {
                   alt="Predictive Risk Insights" 
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-md w-full h-auto" 
+                  className="rounded-xl shadow-md w-full h-auto" 
                 />
               </div>
             </div>
@@ -140,7 +129,7 @@ export function PythtechWebsite() {
                   alt="Protect Borders & Assets" 
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-md w-full h-auto" 
+                  className="rounded-xl shadow-md w-full h-auto" 
                 />
               </div>
             </div>
@@ -166,7 +155,7 @@ export function PythtechWebsite() {
                   alt="Defense & Intelligence" 
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-md w-full h-auto" 
+                  className="rounded-xl shadow-md w-full h-auto" 
                 />
               </div>
             </div>
@@ -194,7 +183,7 @@ export function PythtechWebsite() {
                   alt="Sanctions Screening" 
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-md w-full h-auto" 
+                  className="rounded-xl shadow-md w-full h-auto" 
                 />
               </div>
             </div>
@@ -220,7 +209,7 @@ export function PythtechWebsite() {
                   alt="Ocean-Freight Visibility" 
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-md w-full h-auto" 
+                  className="rounded-xl shadow-md w-full h-auto" 
                 />
               </div>
             </div>
@@ -246,7 +235,7 @@ export function PythtechWebsite() {
                   alt="AI-Powered Analytics" 
                   width={600}
                   height={400}
-                  className="rounded-lg shadow-md w-full h-auto" 
+                  className="rounded-xl shadow-md w-full h-auto" 
                 />
               </div>
             </div>
@@ -261,7 +250,7 @@ export function PythtechWebsite() {
               onClick={openLearnMore}
               variant="outline"
               size="lg"
-              className="bg-white text-blue-600 hover:bg-blue-50"
+              className="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900 hover:text-blue-700 dark:hover:text-blue-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
             >
               Get Started
             </Button>
@@ -281,7 +270,7 @@ export function PythtechWebsite() {
         </div>
       </footer>
 
-      <LearnMoreForm isOpen={isLearnMoreOpen} onClose={closeLearnMore} onInputChange={handleInputChange} onSubmit={handleSubmit} />
+      <LearnMoreForm isOpen={isLearnMoreOpen} onClose={closeLearnMore} onSubmit={handleSubmit} />
     </div>
   )
 }
