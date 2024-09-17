@@ -5,17 +5,17 @@ import "./globals.css";
 const inter = localFont({
   src: [
     {
-      path: '../public/fonts/Inter-Regular.ttf',
+      path: './fonts/Inter-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../public/fonts/Inter-Medium.ttf',
+      path: './fonts/Inter-Medium.ttf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../public/fonts/Inter-SemiBold.ttf',
+      path: './fonts/Inter-SemiBold.ttf',
       weight: '600',
       style: 'normal',
     },
