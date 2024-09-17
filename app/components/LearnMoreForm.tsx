@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 interface LearnMoreFormProps {
   isOpen: boolean;
   onClose: () => void;
+  onInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onSubmit: (e: React.FormEvent) => Promise<void>;
 }
 
-const LearnMoreForm: React.FC<LearnMoreFormProps> = ({ isOpen, onClose }) => {
+export default function LearnMoreForm({ isOpen, onClose, onInputChange, onSubmit }: LearnMoreFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -110,7 +112,7 @@ const LearnMoreForm: React.FC<LearnMoreFormProps> = ({ isOpen, onClose }) => {
               </button>
             </div>
             <p className="leading-relaxed mb-5 text-gray-600">Please fill in the details below to get access to our AI-powered solutions.</p>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={onSubmit}>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
                 <input
@@ -118,7 +120,7 @@ const LearnMoreForm: React.FC<LearnMoreFormProps> = ({ isOpen, onClose }) => {
                   id="name"
                   name="name"
                   value={formData.name}
-                  onChange={handleInputChange}
+                  onChange={onInputChange}
                   className={`w-full px-3 py-2 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500`}
                 />
                 {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
@@ -129,7 +131,7 @@ const LearnMoreForm: React.FC<LearnMoreFormProps> = ({ isOpen, onClose }) => {
                   id="email"
                   name="email"
                   value={formData.email}
-                  onChange={handleInputChange}
+                  onChange={onInputChange}
                   className={`w-full px-3 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500`}
                 />
                 {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
@@ -140,7 +142,7 @@ const LearnMoreForm: React.FC<LearnMoreFormProps> = ({ isOpen, onClose }) => {
                   id="phone"
                   name="phone"
                   value={formData.phone}
-                  onChange={handleInputChange}
+                  onChange={onInputChange}
                   className={`w-full px-3 py-2 border ${errors.phone ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500`}
                 />
                 {errors.phone && <p className="mt-1 text-xs text-red-500">{errors.phone}</p>}
@@ -151,7 +153,7 @@ const LearnMoreForm: React.FC<LearnMoreFormProps> = ({ isOpen, onClose }) => {
                   name="query"
                   rows={4}
                   value={formData.query}
-                  onChange={handleInputChange}
+                  onChange={onInputChange}
                   className={`w-full px-3 py-2 border ${errors.query ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500`}
                 />
                 {errors.query && <p className="mt-1 text-xs text-red-500">{errors.query}</p>}
@@ -171,5 +173,3 @@ const LearnMoreForm: React.FC<LearnMoreFormProps> = ({ isOpen, onClose }) => {
     </div>
   );
 };
-
-export default LearnMoreForm;

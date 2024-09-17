@@ -159,7 +159,7 @@ export function PythtechWebsite() {
 
                 <p className="mb-4">With real-time screening capabilities, fully customizable risk indicators, and seamless scalability, our solution ensures that every entity and transaction is thoroughly vetted, helping you avoid regulatory penalties while maintaining the smooth flow of operations.</p>
                 <ul className="list-disc list-inside">
-                  <li><strong>End-to-End Due Diligence Across the Supply Chain</strong>: Our platform conducts comprehensive due diligence at every step of the supply chain, ensuring that all maritime and non-maritime entities are screened for compliance. From the origin of goods to the final delivery, our system flags any potential risks related to sanctions, providing you with a clear and actionable risk profile for each transaction.</li>
+                  <li><strong>End-to-End Due Dilligence Across the Supply Chain</strong>: Our platform conducts comprehensive due diligence at every step of the supply chain, ensuring that all maritime and non-maritime entities are screened for compliance. From the origin of goods to the final delivery, our system flags any potential risks related to sanctions, providing you with a clear and actionable risk profile for each transaction.</li>
                   <li><strong>Scalable and Configurable Risk Indicators</strong>: We offer fully scalable and highly configurable risk indicators, allowing you to tailor the system to the specific needs of your operation. Whether screening large fleets or smaller shipments, you can customize risk thresholds and parameters to align with your internal compliance policies and regulatory obligations.</li>
                   <li><strong>Real-Time Monitoring and Alerts</strong>: Stay ahead of potential compliance violations with real-time monitoring and instant alerts. Our system continuously tracks vessel movements and entity interactions, alerting you to any sanction violations or high-risk behaviors before they escalate into regulatory issues.</li>
                   <li><strong>Global Coverage for Maritime and Non-Maritime Entitiess</strong>: Our solution covers not only maritime operations such as wet/dry bulk and container vessels but also extends to non-maritime entities like suppliers, logistics partners, and financial institutions. This comprehensive reach ensures that every part of your supply chain is fully compliant with international sanctions regulations.</li>
@@ -240,7 +240,7 @@ export function PythtechWebsite() {
         </div>
       </footer>
 
-      <LearnMoreForm isOpen={isLearnMoreOpen} onClose={closeLearnMore} />
+      <LearnMoreForm isOpen={isLearnMoreOpen} onClose={closeLearnMore} onInputChange={handleInputChange} onSubmit={handleSubmit} />
     </div>
   )
 }
