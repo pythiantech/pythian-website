@@ -1,52 +1,28 @@
 'use client'
 
 import { useState } from "react"
-<<<<<<< HEAD
-import { AnchorIcon, BarChartIcon, GlobeIcon, ShieldIcon, ShipIcon, MapIcon, RadarIcon, EyeIcon, NetworkIcon, BrainIcon } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import LearnMoreForm from '../app/components/LearnMoreForm';
-=======
 import { RadarIcon, ShieldIcon, NetworkIcon, EyeIcon, ShipIcon, BrainIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import LearnMoreForm from '../app/components/LearnMoreForm';
 import Image from 'next/image'
->>>>>>> new-main
 
 export function PythtechWebsite() {
   const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
-    mobile: "",
     email: "",
     reason: ""
   })
-<<<<<<< HEAD
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitMessage, setSubmitMessage] = useState("")
-=======
->>>>>>> new-main
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData(prevData => ({ ...prevData, [name]: value }))
+    setFormData(prev => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-<<<<<<< HEAD
-    setIsSubmitting(true)
     // Simulate sending email
     await new Promise(resolve => setTimeout(resolve, 1000))
-    setIsSubmitting(false)
-    setSubmitMessage("Thank you for your interest. We'll get back to you soon!")
-=======
-    // Simulate sending email
-    await new Promise(resolve => setTimeout(resolve, 1000))
->>>>>>> new-main
     // In a real application, you would send the form data to a server here
     console.log("Sending email to info@pythtech.com with data:", formData)
   }
@@ -59,15 +35,7 @@ export function PythtechWebsite() {
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <div className="flex items-center space-x-4">
-<<<<<<< HEAD
-            <img src="/pythtech_logo.png" alt="Pythtech Logo" className="h-20 w-40" />
-=======
             <Image src="/pythtech_logo.png" alt="Pythtech Logo" className="h-20 w-40" />
->>>>>>> new-main
-            <div>
-              {/* <h1 className="text-2xl font-bold text-blue-600">Pythtech</h1>
-              <p className="text-sm text-gray-600">Pvt Ltd</p> */}
-            </div>
           </div>
         </div>
       </header>
@@ -136,11 +104,7 @@ export function PythtechWebsite() {
                 <p>Our state-of-the-art technology integrates diverse data streams, including AIS (Automatic Identification System) feeds, real-time weather patterns, and satellite imagery, to create detailed and comprehensive risk profiles for vessels across the globe. By leveraging these rich data sources, we provide predictive risk recommendations that empower you to make informed decisions with unparalleled confidence.</p>
               </div>
               <div className="md:w-1/2">
-<<<<<<< HEAD
-                <img src="/predictive_risk.png?height=300&width=400" alt="Predictive Risk Insights" className="rounded-lg shadow-md" />
-=======
                 <Image src="/predictive_risk.png?height=300&width=400" alt="Predictive Risk Insights" className="rounded-lg shadow-md" />
->>>>>>> new-main
               </div>
             </div>
           </div>
@@ -160,11 +124,7 @@ export function PythtechWebsite() {
                 </ul>
               </div>
               <div className="md:w-1/2">
-<<<<<<< HEAD
-                <img src="/border.png?height=300&width=400" alt="Protect Borders & Assets" className="rounded-lg shadow-md" />
-=======
                 <Image src="/border.png?height=300&width=400" alt="Protect Borders & Assets" className="rounded-lg shadow-md" />
->>>>>>> new-main
               </div>
             </div>
           </div>
@@ -175,11 +135,7 @@ export function PythtechWebsite() {
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
                 <h2 className="text-3xl font-bold mb-4">Defense & Intelligence</h2>
-<<<<<<< HEAD
-                <p className="mb-4">Leverage the power of advanced AI to enhance the efficiency and effectiveness of your defense and intelligence operations. Our cutting-edge technology is designed to optimize operational decision-making and strategic planning, ensuring that you are always one step ahead of potential threats. Whether it's safeguarding national interests or tracking vessels globally, our solutions provide the critical insights you need to act decisively and confidently..</p>
-=======
                 <p className="mb-4">Leverage the power of advanced AI to enhance the efficiency and effectiveness of your defense and intelligence operations. Our cutting-edge technology is designed to optimize operational decision-making and strategic planning, ensuring that you are always one step ahead of potential threats. Whether it&apos;s safeguarding national interests or tracking vessels globally, our solutions provide the critical insights you need to act decisively and confidently..</p>
->>>>>>> new-main
                 <ul className="list-disc list-inside">
                   <li><strong>Enhance Strategic Missions</strong>: Improve the execution of critical defense missions and safeguard national interests using advanced AI-driven insights and strategic data analysis.</li>
                   <li><strong>Lifetime Vessel Tracking</strong>: Track vessels across their entire operational lifespan using patented entity resolution technology to ensure continuous monitoring and risk assessment.</li>
@@ -188,11 +144,7 @@ export function PythtechWebsite() {
                 </ul>
               </div>
               <div className="md:w-1/2">
-<<<<<<< HEAD
-                <img src="/defense.png?height=300&width=400" alt="Defense & Intelligence" className="rounded-lg shadow-md" />
-=======
                 <Image src="/defense.png?height=300&width=400" alt="Defense & Intelligence" className="rounded-lg shadow-md" />
->>>>>>> new-main
               </div>
             </div>
           </div>
@@ -203,11 +155,7 @@ export function PythtechWebsite() {
             <div className="flex flex-col md:flex-row-reverse items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 md:pl-8">
                 <h2 className="text-3xl font-bold mb-4">Comprehensive Sanctions Screening Solutions</h2>
-<<<<<<< HEAD
-                <p className="mb-4">In today's complex global trade environment, ensuring compliance with sanctions is more critical than ever. Our advanced sanctions screening platform offers robust tools to monitor and enforce compliance across the entire supply chain. Whether you are dealing with wet or dry bulk carriers, container shipments, or non-maritime entities, our system is designed to deliver full-spectrum risk management, keeping your operations safe and compliant.</p>
-=======
                 <p className="mb-4">In today&apos;s complex global trade environment, ensuring compliance with sanctions is more critical than ever. Our advanced sanctions screening platform offers robust tools to monitor and enforce compliance across the entire supply chain. Whether you are dealing with wet or dry bulk carriers, container shipments, or non-maritime entities, our system is designed to deliver full-spectrum risk management, keeping your operations safe and compliant.</p>
->>>>>>> new-main
 
                 <p className="mb-4">With real-time screening capabilities, fully customizable risk indicators, and seamless scalability, our solution ensures that every entity and transaction is thoroughly vetted, helping you avoid regulatory penalties while maintaining the smooth flow of operations.</p>
                 <ul className="list-disc list-inside">
@@ -218,11 +166,7 @@ export function PythtechWebsite() {
                 </ul>
               </div>
               <div className="md:w-1/2">
-<<<<<<< HEAD
-                <img src="/sanctions.png?height=300&width=400" alt="Sanctions Screening" className="rounded-lg shadow-md" />
-=======
                 <Image src="/sanctions.png?height=300&width=400" alt="Sanctions Screening" className="rounded-lg shadow-md" />
->>>>>>> new-main
               </div>
             </div>
           </div>
@@ -233,11 +177,7 @@ export function PythtechWebsite() {
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
                 <h2 className="text-3xl font-bold mb-4">Ocean-Freight Visibility</h2>
-<<<<<<< HEAD
-                <p className="mb-4">Achieve unparalleled real-time visibility into both bulk and container shipments with our cutting-edge tracking solution. Our system ensures you have full oversight of your cargo's journey, from the point of origin to the final destination. With robust global coverage and automated updates, you can stay informed on every movement and event, allowing for proactive decision-making and operational efficiency.</p>
-=======
                 <p className="mb-4">Achieve unparalleled real-time visibility into both bulk and container shipments with our cutting-edge tracking solution. Our system ensures you have full oversight of your cargo&apos;s journey, from the point of origin to the final destination. With robust global coverage and automated updates, you can stay informed on every movement and event, allowing for proactive decision-making and operational efficiency.</p>
->>>>>>> new-main
                 <ul className="list-disc list-inside">
                   <li><strong>99% Global Shipment Coverage:</strong> Our system provides near-total visibility, tracking 99% of all ocean shipments worldwide, ensuring that you can monitor cargo no matter where it is.</li>
                   <li><strong>Over 95% Milestone Tracking:</strong> Get detailed updates at every critical juncture of the shipment journey, from Gate In at the Port of Loading (POL) to Gate Out at the Port of Discharge (POD), covering over 95% of key milestones.</li>
@@ -246,11 +186,7 @@ export function PythtechWebsite() {
               </ul>
               </div>
               <div className="md:w-1/2">
-<<<<<<< HEAD
-                <img src="/ofv.png?height=300&width=400" alt="Ocean-Freight Visibility" className="rounded-lg shadow-md" />
-=======
                 <Image src="/ofv.png?height=300&width=400" alt="Ocean-Freight Visibility" className="rounded-lg shadow-md" />
->>>>>>> new-main
               </div>
             </div>
           </div>
@@ -264,15 +200,6 @@ export function PythtechWebsite() {
                 <p className="mb-4">Use our AI-powered APIs to access a rich suite of data and insights for maritime operations in your own applications.</p>
                 <ul className="list-disc list-inside">
                   <li><strong>Due Dilligence/Compliance</strong>: Streamline and strengthen your due diligence and investigation workflows by integrating AI-powered insights and clear go/no-go risk recommendations for the global merchant fleet. By selecting only the insights relevant to your needs, your organization can save valuable time and resources. This allows your team to make faster, more informed decisions, helping to safeguard your business from potential reputational and financial risks in the future.</li>
-<<<<<<< HEAD
-                  <li><strong>Behavioral Analysis API</strong>: Boost your analytics with real-time, AI-driven maritime behavioral insights that enable you to swiftly uncover new business opportunities and potential targets. The Behavioral Analysis API seamlessly integrates Windward's vessel activity data, the backbone of our algorithms, into your internal IT systems, offering customizable data views by timeline or geographical area.By tracking critical behaviors like dark activities, ship-to-ship transfers, port visits, route deviations, loitering, and more, you can enhance your existing models and build the foundation for advanced applications, driving smarter and more informed decision-making.</li>
-                  <li><strong>Homeland Security API</strong>: The Homeland Security Insights API provides both historical and real-time data in a single response, complete with customizable, automated alerts. You can monitor behavioral changes over time, detect patterns, and discover new targets based on anomalous activities and geographic relevance. Common applications include integration with UAVs, C4I platforms, and intelligence research systems, enabling enhanced threat detection and proactive response strategies.</li>
-                  <li><strong>Port Insights API</strong>: As the maritime domain becomes more complex and challenging, shipping stakeholders are expected to optimize port operations, minimize congestion and strategize voyage planning while maintaining profitability. With MDAS's integrated port insights, users will be able to get real-time updates about the most economical ports, their current congestion status and better plan ahead at what time and where their vessels will be loaded or discharged.</li>
-                </ul>
-              </div>
-              <div className="md:w-1/2">
-                <img src="/api.png?height=300&width=400" alt="AI-Powered Analytics" className="rounded-lg shadow-md" />
-=======
                   <li><strong>Behavioral Analysis API</strong>: Boost your analytics with real-time, AI-driven maritime behavioral insights that enable you to swiftly uncover new business opportunities and potential targets. The Behavioral Analysis API seamlessly integrates Windward&apos;s vessel activity data, the backbone of our algorithms, into your internal IT systems, offering customizable data views by timeline or geographical area.By tracking critical behaviors like dark activities, ship-to-ship transfers, port visits, route deviations, loitering, and more, you can enhance your existing models and build the foundation for advanced applications, driving smarter and more informed decision-making.</li>
                   <li><strong>Homeland Security API</strong>: The Homeland Security Insights API provides both historical and real-time data in a single response, complete with customizable, automated alerts. You can monitor behavioral changes over time, detect patterns, and discover new targets based on anomalous activities and geographic relevance. Common applications include integration with UAVs, C4I platforms, and intelligence research systems, enabling enhanced threat detection and proactive response strategies.</li>
                   <li><strong>Port Insights API</strong>: As the maritime domain becomes more complex and challenging, shipping stakeholders are expected to optimize port operations, minimize congestion and strategize voyage planning while maintaining profitability. With MDAS&apos;s integrated port insights, users will be able to get real-time updates about the most economical ports, their current congestion status and better plan ahead at what time and where their vessels will be loaded or discharged.</li>
@@ -280,7 +207,6 @@ export function PythtechWebsite() {
               </div>
               <div className="md:w-1/2">
                 <Image src="/api.png?height=300&width=400" alt="AI-Powered Analytics" className="rounded-lg shadow-md" />
->>>>>>> new-main
               </div>
             </div>
           </div>
